@@ -34,6 +34,7 @@ Placetobe Main Menu
         position: absolute;
         right: 18px;
         top: 18px;
+        cursor: pointer;
       }
 
       :host nav ul {
@@ -62,9 +63,9 @@ Placetobe Main Menu
 
     <nav>
 
-      <placetobe-menu-icon open on-tap="_handleTapMenuIcon"></placetobe-menu-icon>
+      <placetobe-menu-icon open on-tap="_handleTap"></placetobe-menu-icon>
 
-      <ul>
+      <ul on-tap="_handleTap">
         <li><a href="/">Home</a></li>
         <li><a href="/campagnes">Campagnes</a></li>
         <li><a href="/start-project">Start project</a></li>
@@ -81,7 +82,7 @@ Placetobe Main Menu
       is: 'placetobe-main-menu',
       behaviors: [PlacetobeStylesBehavior],
 
-      _handleTapMenuIcon: function() {
+      _handleTap: function() {
         this.fire('tap-close');
       }
 
