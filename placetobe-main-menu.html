@@ -1,0 +1,90 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../placetobe-behaviors/placetobe-styles-behavior.html">
+<link rel="import" href="../placetobe-styles/placetobe-styles.html">
+<link rel="import" href="../placetobe-icons/placetobe-menu-icon.html">
+
+<!--
+`placetobe-main-menu`
+Placetobe Main Menu
+
+@demo demo/index.html 
+-->
+
+<dom-module id="placetobe-main-menu">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host nav {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        background-color: var(--placetobe-main-menu-color, var(--placetobe-color-darkblue));
+        padding: 0;
+      }
+
+      :host nav placetobe-menu-icon {
+        --placetobe-icon-color: white;
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        right: 18px;
+        top: 18px;
+      }
+
+      :host nav ul {
+        list-style: none;
+        padding:72px 0 0 0;
+        margin: 0;
+        max-height: calc(100% - 72px);
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      :host nav ul li {
+        @apply(--placetobe-font-heading4);
+        margin: 18px;
+      }
+
+      :host nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      :host nav ul li a:active {
+        color: var(--placetobe-color-red);
+      }
+    </style>
+
+    <nav>
+
+      <placetobe-menu-icon open on-tap="_handleTapMenuIcon"></placetobe-menu-icon>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/campagnes">Campagnes</a></li>
+        <li><a href="/start-project">Start project</a></li>
+        <li><a href="/investeren">Investeren</a></li>
+      </ul>
+
+    </nav>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'placetobe-main-menu',
+      behaviors: [PlacetobeStylesBehavior],
+
+      _handleTapMenuIcon: function() {
+        this.fire('tap-close');
+      }
+
+    });
+  </script>
+</dom-module>
