@@ -18,37 +18,37 @@ Placetobe Main Menu
       }
 
       :host nav {
+        @apply(--placetobe-border-box);
         position: relative;
         height: 100%;
         width: 100%;
         display: block;
-        box-sizing: border-box;
         background-color: var(--placetobe-main-menu-color, var(--placetobe-color-darkblue));
         padding: 0;
       }
 
       :host nav placetobe-menu-icon {
         --placetobe-icon-color: white;
-        width: 36px;
-        height: 36px;
+        width: calc( var(--placetobe-margin) * 2 );
+        height: calc( var(--placetobe-margin) * 2 );
         position: absolute;
-        right: 18px;
-        top: 18px;
+        right: var(--placetobe-margin);
+        top: var(--placetobe-margin);
         cursor: pointer;
       }
 
       :host nav ul {
         list-style: none;
-        padding:72px 0 0 0;
+        padding: calc( var(--placetobe-margin) * 3 ) 0 0 0;
         margin: 0;
-        max-height: calc(100% - 72px);
+        max-height: calc(100% - (var(--placetobe-margin) * 3) );
         overflow: auto;
         -webkit-overflow-scrolling: touch;
       }
 
       :host nav ul li {
         @apply(--placetobe-font-heading4);
-        margin: 18px;
+        margin: var(--placetobe-margin);
       }
 
       :host nav ul li a {
