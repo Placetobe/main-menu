@@ -66,10 +66,10 @@ Placetobe Main Menu
       <placetobe-menu-icon open on-tap="_handleTap"></placetobe-menu-icon>
 
       <ul on-tap="_handleTap">
-        <li><a href="/">Home</a></li>
-        <li><a href="/start-project">Start project</a></li>
-        <li><a href="/tarieven">Tarieven</a></li>
-        <li><a href="/investeren">Investeren</a></li>
+        <li><a on-tap="_handleTap" href="/">Home</a></li>
+        <li><a on-tap="_handleTap" href="/start-project">Start project</a></li>
+        <li><a on-tap="_handleTap" href="/tarieven">Tarieven</a></li>
+        <li><a on-tap="_handleTap" href="/investeren">Investeren</a></li>
       </ul>
 
     </nav>
@@ -90,7 +90,7 @@ Placetobe Main Menu
 
       _handleTap: function(evt) {
         evt.preventDefault();
-        this.locationPath = evt.target.href;
+        this.locationPath = evt.target.href || this.locationPath;
         this.fire('tap-close');
       }
 
