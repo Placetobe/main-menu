@@ -82,7 +82,15 @@ Placetobe Main Menu
       is: 'placetobe-main-menu',
       behaviors: [PlacetobeStylesBehavior],
 
-      _handleTap: function() {
+      locationPath: {
+        type: String,
+        value: null,
+        notify: true
+      },
+
+      _handleTap: function(evt) {
+        evt.preventDefault();
+        this.locationPath = evt.target.href;
         this.fire('tap-close');
       }
 
