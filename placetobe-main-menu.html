@@ -82,10 +82,11 @@ Placetobe Main Menu
       is: 'placetobe-main-menu',
       behaviors: [PlacetobeStylesBehavior],
 
-      locationPath: {
-        type: String,
-        value: null,
-        notify: true
+      properties: {
+        locationPath: {
+          type: String,
+          notify: true
+        }
       },
 
       _handleTap: function(evt) {
