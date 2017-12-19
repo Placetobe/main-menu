@@ -67,6 +67,7 @@ Placetobe Main Menu
 
       <ul on-tap="_handleTap">
         <li><a on-tap="_handleTap" href="/" title="Home">Home</a></li>
+        <li><a on-tap="_handleTap" href="/campagnes" title="Alle Campagnes" hidden$="[[hideCampaigns]]">Alle Campagnes</a></li>
         <li><a on-tap="_handleTap" href="/start-project" title="Start een project">Start een project</a></li>
         <li><a on-tap="_handleTap" href="/start-project/test" title="Quickscan ondernemers">Quickscan ondernemers</a></li>
         <li><a on-tap="_handleTap" href="/tarieven" title="Tarieven voor ondernemers">Tarieven</a></li>
@@ -88,6 +89,10 @@ Placetobe Main Menu
         locationPath: {
           type: String,
           notify: true
+        },
+        hideCampaigns: {
+          type: Boolean,
+          value: false,
         }
       },
 
